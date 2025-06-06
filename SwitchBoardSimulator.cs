@@ -35,6 +35,7 @@ public static class SwitchBoardSimulator
                 Console.Write("\nPlease select an appliance to toggle its state: ");
                 userSelection = Convert.ToInt32(Console.ReadLine());
 
+                Console.Clear();
                 var selectedSwitch = Switches[userSelection - 1];
                 Console.WriteLine($"1. Switch {selectedSwitch.GetApplianceName()} \"{(selectedSwitch.GetApplianceState() is OnState ? "Off" : "On")}\"\n");
                 Console.WriteLine($"2. Back");
@@ -50,9 +51,12 @@ public static class SwitchBoardSimulator
                         continue;
 
                 }
+
+                Console.Clear();
             }
             catch (Exception ex)
             {
+                Console.Clear();
                 Console.WriteLine("Please select a valid option\n");
             }
         }
